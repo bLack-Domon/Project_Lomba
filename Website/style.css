@@ -939,7 +939,7 @@ body {
 .footer-logo span {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #f3b82c;
+    color: white;
 }
 
 .footer-description {
@@ -960,20 +960,20 @@ body {
     width: 36px;
     height: 36px;
     background-color: rgba(243, 184, 44, 0.1);
-    color: #f3b82c;
+    color: #b3b3b3;
     border-radius: 50%;
     transition: all 0.3s ease;
 }
 
 .social-links a:hover {
-    background-color: #f3b82c;
+    background-color: #ffffff;
     color: #1a1a1a;
     transform: translateY(-3px);
 }
 
 .footer-title {
     font-size: 1.2rem;
-    color: #f3b82c;
+    color: white;
     margin-bottom: 25px;
     position: relative;
     padding-bottom: 10px;
@@ -986,7 +986,7 @@ body {
     left: 0;
     width: 40px;
     height: 2px;
-    background-color: #f3b82c;
+    background-color: white;
 }
 
 .footer-links {
@@ -1006,7 +1006,7 @@ body {
 }
 
 .footer-links a:hover {
-    color: #f3b82c;
+    color: #ffffff;
     transform: translateX(5px);
 }
 
@@ -1022,7 +1022,7 @@ body {
 }
 
 .footer-contact i {
-    color: #f3b82c;
+    color: white;
     margin-right: 10px;
     margin-top: 3px;
 }
