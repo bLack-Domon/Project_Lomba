@@ -367,7 +367,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     width: 2px;
-    background-color: #C98729;
+    background-color: #F3AD2B;
     height: 150px; 
 }
 
@@ -403,7 +403,7 @@ body {
     transform: translateX(-50%);
     width: 80px;
     height: 3px;
-    background-color: #C98729;
+    background-color: #F3AD2B;
 }
 
 .about-container {
