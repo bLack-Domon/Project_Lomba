@@ -677,11 +677,11 @@ body {
     transform: translateX(-50%);
     width: 60px;
     height: 3px;
-    background-color: #F3AD2B;
+    background-color: #ffffff;
 }
 
 .section-header p {
-    color: #666;
+    color: #555;
     font-size: 1.1rem;
     max-width: 700px;
     margin: 0 auto;
@@ -735,7 +735,7 @@ body {
     bottom: -40px;
     left: 50%;
     transform: translateX(-50%) scale(0.9);
-    background-color: #4a6bff;
+    background-color: #f3b82c;
     color: white;
     padding: 5px 15px;
     border-radius: 20px;
