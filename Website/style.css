@@ -271,12 +271,12 @@ body {
 
 .btn-primary {
     background-color: #ffffff;
-    color: #f3b82c;
+    color: #F3AD2B;
     border: 2px solid #ffffff;
 }
 
 .btn-primary:hover {
-    background-color: #f3b82c;
+    background-color: #F3AD2B;
     color: white;
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(74, 107, 255, 0.4);
