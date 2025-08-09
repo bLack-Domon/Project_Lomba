@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akses Studio - Pemesanan Tiket Pertunjukan Seni</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar Horizontal -->
+    <nav class="navbar-horizontal">
+        <img src="logo.png" alt="Akses Studio Logo">
+        <h1>Akses Studio</h1>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Navbar Vertical -->
+        <nav class="navbar-vertical">
+            <div class="nav-item active" data-filter="all">Semuanya</div>
+            <div class="nav-item" data-filter="puisi">Puisi</div>
+            <div class="nav-item" data-filter="drama">Drama</div>
+            <div class="nav-item" data-filter="music">Music</div>
+            <div class="nav-item" data-filter="wayang">Wayang Kulit</div>
+        </nav>
+
+        <!-- Content Area -->
+        <div class="content-area">
+            <div class="card-container">
+                <!-- Card 1 -->
+                <div class="card" data-category="puisi">
+                    <div class="card-image">
+                        <img src="https://source.unsplash.com/random/400x300/?poetry" alt="Pertunjukan Puisi">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">Puisi</span>
+                        <h3 class="card-title">Malam Puisi Kontemporer</h3>
+                        <p class="card-date">15 Oktober 2023 • 19:30 WIB</p>
+                        <p class="card-price">Rp 75.000</p>
+                        <button class="card-button">Pesan Tiket</button>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card" data-category="drama">
+                    <div class="card-image">
+                        <img src="img/1.jpeg" alt="Pertunjukan Drama">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">Drama</span>
+                        <h3 class="card-title">Drama Musikal: Roro Jonggrang</h3>
+                        <p class="card-date">20 Oktober 2023 • 20:00 WIB</p>
+                        <p class="card-price">Rp 120.000</p>
+                        <button class="card-button">Pesan Tiket</button>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card" data-category="music">
+                    <div class="card-image">
+                        <img src="https://source.unsplash.com/random/400x300/?concert" alt="Pertunjukan Musik">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">Music</span>
+                        <h3 class="card-title">Konser Jazz Malam Hari</h3>
+                        <p class="card-date">22 Oktober 2023 • 21:00 WIB</p>
+                        <p class="card-price">Rp 150.000</p>
+                        <button class="card-button">Pesan Tiket</button>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="card" data-category="wayang">
+                    <div class="card-image">
+                        <img src="https://source.unsplash.com/random/400x300/?shadow,puppet" alt="Pertunjukan Wayang">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">Wayang Kulit</span>
+                        <h3 class="card-title">Wayang Kulit: Bharatayudha</h3>
+                        <p class="card-date">25 Oktober 2023 • 19:00 WIB</p>
+                        <p class="card-price">Rp 85.000</p>
+                        <button class="card-button">Pesan Tiket</button>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="card" data-category="puisi">
+                    <div class="card-image">
+                        <img src="https://source.unsplash.com/random/400x300/?poem" alt="Pertunjukan Puisi">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">Puisi</span>
+                        <h3 class="card-title">Baca Puisi: Angkatan 2020</h3>
+                        <p class="card-date">28 Oktober 2023 • 18:30 WIB</p>
+                        <p class="card-price">Rp 50.000</p>
+                        <button class="card-button">Pesan Tiket</button>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="card" data-category="drama">
+                    <div class="card-image">
+                        <img src="https://source.unsplash.com/random/400x300/?play" alt="Pertunjukan Drama">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">Drama</span>
+                        <h3 class="card-title">Drama Komedi: Keluarga Kacau</h3>
+                        <p class="card-date">1 November 2023 • 19:00 WIB</p>
+                        <p class="card-price">Rp 100.000</p>
+                        <button class="card-button">Pesan Tiket</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navItems = document.querySelectorAll('.nav-item');
+            const cards = document.querySelectorAll('.card');
+
+            navItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    // Remove active class from all items
+                    navItems.forEach(navItem => navItem.classList.remove('active'));
+                    
+                    // Add active class to clicked item
+                    this.classList.add('active');
+                    
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Filter cards
+                    cards.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });           
+        });
+    </script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>
