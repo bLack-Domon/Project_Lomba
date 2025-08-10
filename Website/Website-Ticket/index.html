@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,26 +9,35 @@
     <title>Akses Studio - Pemesanan Tiket Pertunjukan Seni</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <!-- Navbar Horizontal -->
-    <nav class="navbar-horizontal">
+    <nav class="navbar-horizontal" style="justify-content: center;">
         <img src="img/akses logo.png" alt="Akses Studio Logo">
-        <h1 class="dancing-script">Akses Studio</h1>
+        <h1 class="dancing-script" style="font-size: 60px;">Akses Studio</h1>
     </nav>
 
     <!-- Main Content -->
     <div class="main-content">
-        <!-- Navbar Vertical -->
+        <!-- Navbar Vertical
         <nav class="navbar-vertical">
             <div class="nav-item active" data-filter="all">Semua</div>
             <div class="nav-item" data-filter="puisi">Puisi</div>
             <div class="nav-item" data-filter="drama">Drama</div>
             <div class="nav-item" data-filter="music">Music</div>
             <div class="nav-item" data-filter="wayang">Wayang Kulit</div>
-        </nav>
+        </nav> -->
 
         <!-- Content Area -->
         <div class="content-area">
+            <!-- Menu Filter -->
+            <div class="filter-menu">
+                <div class="nav-item active" data-filter="all">Semuanya</div>
+                <div class="nav-item" data-filter="puisi">Puisi</div>
+                <div class="nav-item" data-filter="drama">Drama</div>
+                <div class="nav-item" data-filter="music">Music</div>
+                <div class="nav-item" data-filter="wayang">Wayang Kulit</div>
+            </div>
             <div class="card-container">
                 <!-- Card 1 -->
                 <div class="card" data-category="puisi">
@@ -117,69 +127,33 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const navItems = document.querySelectorAll('.nav-item');
             const cards = document.querySelectorAll('.card');
 
             navItems.forEach(item => {
-                item.addEventListener('click', function() {
+                item.addEventListener('click', function () {
                     // Remove active class from all items
                     navItems.forEach(navItem => navItem.classList.remove('active'));
-                    
+
                     // Add active class to clicked item
                     this.classList.add('active');
-                    
+
                     const filter = this.getAttribute('data-filter');
-                    
+
                     // Filter cards
                     cards.forEach(card => {
-                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        if (filter === 'all' || card.getAttribute('data-category') ===
+                            filter) {
                             card.style.display = 'block';
                         } else {
                             card.style.display = 'none';
                         }
                     });
                 });
-            });           
+            });
         });
     </script>
-<!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script>
 </body>
+
 </html>
