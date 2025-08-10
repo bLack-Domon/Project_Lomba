@@ -1,31 +1,41 @@
 <!DOCTYPE html>
 <html lang="id">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Rochester&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rochester&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <title>Akses Studio - Pemesanan Tiket Pertunjukan Seni</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
+  <body>
     <!-- Navbar Horizontal -->
     <nav class="navbar-horizontal">
-        <div class="simbol">
-        <img src="img/akses logo.png" alt="Akses Studio Logo">
-        <h1 class="dancing-script" style="font-size: 60px;">Akses Studio</h1>
-        </div>
-        <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">Contact</a></li>
-        </ul>
+      <div class="navbar-left">
+        <img src="img/akses logo.png" alt="Akses Studio Logo" class="logo" />
+        <h1 class="dancing-script">Akses Studio</h1>
+      </div>
+
+      <ul class="navbar-center">
+        <li><a href="">Home</a></li>
+        <li><a href="">Contact</a></li>
+      </ul>
+
+      <div class="navbar-right">
+        <img src="img/defelaut.jpeg" alt="Profile" class="profile-pic" />
+      </div>
     </nav>
 
     <!-- Main Content -->
     <div class="main-content">
-        <!-- Navbar Vertical
+      <!-- Navbar Vertical
         <nav class="navbar-vertical">
             <div class="nav-item active" data-filter="all">Semua</div>
             <div class="nav-item" data-filter="puisi">Puisi</div>
@@ -34,224 +44,321 @@
             <div class="nav-item" data-filter="wayang">Wayang Kulit</div>
         </nav> -->
 
-        <!-- Content Area -->
-        <div class="content-area">
-            <!-- Menu Filter -->
-            <div class="filter-menu">
-                <div class="nav-item active" data-filter="all">Semuanya</div>
-                <div class="nav-item" data-filter="puisi">Puisi</div>
-                <div class="nav-item" data-filter="drama">Drama</div>
-                <div class="nav-item" data-filter="music">Music</div>
-                <div class="nav-item" data-filter="wayang">Wayang Kulit</div>
-            </div>
-            <div class="card-container">
-                <!-- Card 1 -->
-                <div class="card" data-category="puisi">
-                    <div class="card-image">
-                        <img src="img/1.jpeg" alt="Pertunjukan Puisi">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-category">Puisi</span>
-                        <h3 class="card-title">Malam Puisi Kontemporer</h3>
-                        <p class="card-date">15 Oktober 2023 • 19:30 WIB</p>
-                        <p class="card-price">Rp 75.000</p>
-                        <button class="card-button" onclick="openModal('Malam Puisi Kontemporer')">Pesan Tiket</button>
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="card" data-category="drama">
-                    <div class="card-image">
-                        <img src="img/1.jpeg" alt="Pertunjukan Drama">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-category">Drama</span>
-                        <h3 class="card-title">Drama Musikal: Roro Jonggrang</h3>
-                        <p class="card-date">20 Oktober 2023 • 20:00 WIB</p>
-                        <p class="card-price">Rp 120.000</p>
-                        <button class="card-button" onclick="openModal('Malam Puisi Kontemporer')">Pesan Tiket</button>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="card" data-category="music">
-                    <div class="card-image">
-                        <img src="img/1.jpeg" alt="Pertunjukan Musik">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-category">Music</span>
-                        <h3 class="card-title">Konser Jazz Malam Hari</h3>
-                        <p class="card-date">22 Oktober 2023 • 21:00 WIB</p>
-                        <p class="card-price">Rp 150.000</p>
-                        <button class="card-button" onclick="openModal('Malam Puisi Kontemporer')">Pesan Tiket</button>
-                    </div>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="card" data-category="wayang">
-                    <div class="card-image">
-                        <img src="img/1.jpeg" alt="Pertunjukan Wayang">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-category">Wayang Kulit</span>
-                        <h3 class="card-title">Wayang Kulit: Bharatayudha</h3>
-                        <p class="card-date">25 Oktober 2023 • 19:00 WIB</p>
-                        <p class="card-price">Rp 85.000</p>
-                        <button class="card-button" onclick="openModal('Malam Puisi Kontemporer')">Pesan Tiket</button>
-                    </div>
-                </div>
-
-                <!-- Card 5 -->
-                <div class="card" data-category="puisi">
-                    <div class="card-image">
-                        <img src="img/1.jpeg" alt="Pertunjukan Puisi">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-category">Puisi</span>
-                        <h3 class="card-title">Baca Puisi: Angkatan 2020</h3>
-                        <p class="card-date">28 Oktober 2023 • 18:30 WIB</p>
-                        <p class="card-price">Rp 50.000</p>
-                        <button class="card-button" onclick="openModal('Malam Puisi Kontemporer')">Pesan Tiket</button>
-                    </div>
-                </div>
-
-                <!-- Card 6 -->
-                <div class="card" data-category="drama">
-                    <div class="card-image">
-                        <img src="img/1.jpeg" alt="Pertunjukan Drama">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-category">Drama</span>
-                        <h3 class="card-title">Drama Komedi: Keluarga Kacau</h3>
-                        <p class="card-date">1 November 2023 • 19:00 WIB</p>
-                        <p class="card-price">Rp 100.000</p>
-                        <button class="card-button" onclick="openModal('Malam Puisi Kontemporer')">Pesan Tiket</button>
-                    </div>
-                </div>
-            </div>
+      <!-- Content Area -->
+      <div class="content-area">
+        <!-- Menu Filter -->
+        <div class="filter-menu">
+          <div class="nav-item active" data-filter="all">Semuanya</div>
+          <div class="nav-item" data-filter="puisi">Puisi</div>
+          <div class="nav-item" data-filter="drama">Drama</div>
+          <div class="nav-item" data-filter="music">Music</div>
+          <div class="nav-item" data-filter="wayang">Wayang Kulit</div>
         </div>
+        <div class="card-container">
+          <!-- Card 1 -->
+          <div class="card" data-category="puisi">
+            <div class="card-image">
+              <img src="img/1.jpeg" alt="Pertunjukan Puisi" />
+            </div>
+            <div class="card-content">
+              <span class="card-category">Puisi</span>
+              <h3 class="card-title">Malam Puisi Kontemporer</h3>
+              <p class="card-date">15 Oktober 2023 • 19:30 WIB</p>
+              <p class="card-price">Rp 75.000</p>
+              <button
+                class="card-button"
+                onclick="openModal('Malam Puisi Kontemporer')"
+              >
+                Pesan Tiket
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="card" data-category="drama">
+            <div class="card-image">
+              <img src="img/1.jpeg" alt="Pertunjukan Drama" />
+            </div>
+            <div class="card-content">
+              <span class="card-category">Drama</span>
+              <h3 class="card-title">Drama Musikal: Roro Jonggrang</h3>
+              <p class="card-date">20 Oktober 2023 • 20:00 WIB</p>
+              <p class="card-price">Rp 120.000</p>
+              <button
+                class="card-button"
+                onclick="openModal('Malam Puisi Kontemporer')"
+              >
+                Pesan Tiket
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="card" data-category="music">
+            <div class="card-image">
+              <img src="img/1.jpeg" alt="Pertunjukan Musik" />
+            </div>
+            <div class="card-content">
+              <span class="card-category">Music</span>
+              <h3 class="card-title">Konser Jazz Malam Hari</h3>
+              <p class="card-date">22 Oktober 2023 • 21:00 WIB</p>
+              <p class="card-price">Rp 150.000</p>
+              <button
+                class="card-button"
+                onclick="openModal('Malam Puisi Kontemporer')"
+              >
+                Pesan Tiket
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="card" data-category="wayang">
+            <div class="card-image">
+              <img src="img/1.jpeg" alt="Pertunjukan Wayang" />
+            </div>
+            <div class="card-content">
+              <span class="card-category">Wayang Kulit</span>
+              <h3 class="card-title">Wayang Kulit: Bharatayudha</h3>
+              <p class="card-date">25 Oktober 2023 • 19:00 WIB</p>
+              <p class="card-price">Rp 85.000</p>
+              <button
+                class="card-button"
+                onclick="openModal('Malam Puisi Kontemporer')"
+              >
+                Pesan Tiket
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="card" data-category="puisi">
+            <div class="card-image">
+              <img src="img/1.jpeg" alt="Pertunjukan Puisi" />
+            </div>
+            <div class="card-content">
+              <span class="card-category">Puisi</span>
+              <h3 class="card-title">Baca Puisi: Angkatan 2020</h3>
+              <p class="card-date">28 Oktober 2023 • 18:30 WIB</p>
+              <p class="card-price">Rp 50.000</p>
+              <button
+                class="card-button"
+                onclick="openModal('Malam Puisi Kontemporer')"
+              >
+                Pesan Tiket
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="card" data-category="drama">
+            <div class="card-image">
+              <img src="img/1.jpeg" alt="Pertunjukan Drama" />
+            </div>
+            <div class="card-content">
+              <span class="card-category">Drama</span>
+              <h3 class="card-title">Drama Komedi: Keluarga Kacau</h3>
+              <p class="card-date">1 November 2023 • 19:00 WIB</p>
+              <p class="card-price">Rp 100.000</p>
+              <button
+                class="card-button"
+                onclick="openModal('Malam Puisi Kontemporer')"
+              >
+                Pesan Tiket
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- pop up -->
-     <!-- Booking Modal -->
+    <!-- Booking Modal -->
     <div class="modal" id="bookingModal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
-            <div class="modal-header">
-                <h2 id="modalEventTitle">Event Title</h2>
-            </div>
-            <div class="modal-body">
-                <form id="bookingForm">
-                    <div class="form-group">
-                        <label for="fullName">Full Name</label>
-                        <input type="text" id="fullName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" required>
-                    </div>
-                    
-                    <h3>Ticket Options</h3>
-                    <div class="ticket-options">
-                        <!-- General Admission -->
-                        <div class="ticket-option">
-                            <div class="ticket-info">
-                                <h4>General Admission</h4>
-                                <p>Access to general seating area</p>
-                                <p>$49.99</p>
-                            </div>
-                            <div class="ticket-quantity">
-                                <button type="button" class="quantity-btn" onclick="adjustQuantity('general', -1)">-</button>
-                                <input type="number" id="generalQuantity" class="quantity-input" value="0" min="0" readonly>
-                                <button type="button" class="quantity-btn" onclick="adjustQuantity('general', 1)">+</button>
-                            </div>
-                        </div>
-                        
-                        <!-- Premium Seating -->
-                        <div class="ticket-option">
-                            <div class="ticket-info">
-                                <h4>Premium Seating</h4>
-                                <p>Reserved premium seating with better view</p>
-                                <p>$129.99</p>
-                            </div>
-                            <div class="ticket-quantity">
-                                <button type="button" class="quantity-btn" onclick="adjustQuantity('premium', -1)">-</button>
-                                <input type="number" id="premiumQuantity" class="quantity-input" value="0" min="0" readonly>
-                                <button type="button" class="quantity-btn" onclick="adjustQuantity('premium', 1)">+</button>
-                            </div>
-                        </div>
-                        
-                        <!-- VIP Package -->
-                        <div class="ticket-option">
-                            <div class="ticket-info">
-                                <h4>VIP Package</h4>
-                                <p>Front row seats, meet & greet, and exclusive merchandise</p>
-                                <p>$299.99</p>
-                            </div>
-                            <div class="ticket-quantity">
-                                <button type="button" class="quantity-btn" onclick="adjustQuantity('vip', -1)">-</button>
-                                <input type="number" id="vipQuantity" class="quantity-input" value="0" min="0" readonly>
-                                <button type="button" class="quantity-btn" onclick="adjustQuantity('vip', 1)">+</button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <div class="total-price">
-                    Total: $<span id="totalAmount">0.00</span>
-                </div>
-                <button type="button" class="confirm-btn" onclick="confirmBooking()">Confirm Booking</button>
-            </div>
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <div class="modal-header">
+          <h2 id="modalEventTitle">Event Title</h2>
         </div>
+        <div class="modal-body">
+          <form id="bookingForm">
+            <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <input type="text" id="fullName" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" required />
+            </div>
+
+            <h3>Ticket Options</h3>
+            <div class="ticket-options">
+              <!-- General Admission -->
+              <div class="ticket-option">
+                <div class="ticket-info">
+                  <h4>General Admission</h4>
+                  <p>Access to general seating area</p>
+                  <p>$49.99</p>
+                </div>
+                <div class="ticket-quantity">
+                  <button
+                    type="button"
+                    class="quantity-btn"
+                    onclick="adjustQuantity('general', -1)"
+                  >
+                    -
+                  </button>
+                  <input
+                    type="number"
+                    id="generalQuantity"
+                    class="quantity-input"
+                    value="0"
+                    min="0"
+                    readonly
+                  />
+                  <button
+                    type="button"
+                    class="quantity-btn"
+                    onclick="adjustQuantity('general', 1)"
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+
+              <!-- Premium Seating -->
+              <div class="ticket-option">
+                <div class="ticket-info">
+                  <h4>Premium Seating</h4>
+                  <p>Reserved premium seating with better view</p>
+                  <p>$129.99</p>
+                </div>
+                <div class="ticket-quantity">
+                  <button
+                    type="button"
+                    class="quantity-btn"
+                    onclick="adjustQuantity('premium', -1)"
+                  >
+                    -
+                  </button>
+                  <input
+                    type="number"
+                    id="premiumQuantity"
+                    class="quantity-input"
+                    value="0"
+                    min="0"
+                    readonly
+                  />
+                  <button
+                    type="button"
+                    class="quantity-btn"
+                    onclick="adjustQuantity('premium', 1)"
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+
+              <!-- VIP Package -->
+              <div class="ticket-option">
+                <div class="ticket-info">
+                  <h4>VIP Package</h4>
+                  <p>
+                    Front row seats, meet & greet, and exclusive merchandise
+                  </p>
+                  <p>$299.99</p>
+                </div>
+                <div class="ticket-quantity">
+                  <button
+                    type="button"
+                    class="quantity-btn"
+                    onclick="adjustQuantity('vip', -1)"
+                  >
+                    -
+                  </button>
+                  <input
+                    type="number"
+                    id="vipQuantity"
+                    class="quantity-input"
+                    value="0"
+                    min="0"
+                    readonly
+                  />
+                  <button
+                    type="button"
+                    class="quantity-btn"
+                    onclick="adjustQuantity('vip', 1)"
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <div class="total-price">
+            Total: $<span id="totalAmount">0.00</span>
+          </div>
+          <button type="button" class="confirm-btn" onclick="confirmBooking()">
+            Confirm Booking
+          </button>
+        </div>
+      </div>
     </div>
 
     <!-- Confirmation Modal -->
     <div class="modal" id="confirmationModal">
-        <div class="modal-content confirmation-modal">
-            <div class="confirmation-icon">
-                <i class="fas fa-check-circle"></i>
-            </div>
-            <div class="confirmation-message">
-                <h2>Booking Confirmed!</h2>
-                <p>Your tickets have been successfully booked. A confirmation email has been sent to your registered email address.</p>
-            </div>
-            <button type="button" class="confirm-btn" onclick="closeConfirmation()">Close</button>
+      <div class="modal-content confirmation-modal">
+        <div class="confirmation-icon">
+          <i class="fas fa-check-circle"></i>
         </div>
+        <div class="confirmation-message">
+          <h2>Booking Confirmed!</h2>
+          <p>
+            Your tickets have been successfully booked. A confirmation email has
+            been sent to your registered email address.
+          </p>
+        </div>
+        <button type="button" class="confirm-btn" onclick="closeConfirmation()">
+          Close
+        </button>
+      </div>
     </div>
     <script src="main.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const navItems = document.querySelectorAll('.nav-item');
-            const cards = document.querySelectorAll('.card');
+      document.addEventListener("DOMContentLoaded", function () {
+        const navItems = document.querySelectorAll(".nav-item");
+        const cards = document.querySelectorAll(".card");
 
-            navItems.forEach(item => {
-                item.addEventListener('click', function () {
-                    // Remove active class from all items
-                    navItems.forEach(navItem => navItem.classList.remove('active'));
+        navItems.forEach((item) => {
+          item.addEventListener("click", function () {
+            // Remove active class from all items
+            navItems.forEach((navItem) => navItem.classList.remove("active"));
 
-                    // Add active class to clicked item
-                    this.classList.add('active');
+            // Add active class to clicked item
+            this.classList.add("active");
 
-                    const filter = this.getAttribute('data-filter');
+            const filter = this.getAttribute("data-filter");
 
-                    // Filter cards
-                    cards.forEach(card => {
-                        if (filter === 'all' || card.getAttribute('data-category') ===
-                            filter) {
-                            card.style.display = 'block';
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    });
-                });
+            // Filter cards
+            cards.forEach((card) => {
+              if (
+                filter === "all" ||
+                card.getAttribute("data-category") === filter
+              ) {
+                card.style.display = "block";
+              } else {
+                card.style.display = "none";
+              }
             });
+          });
         });
+      });
     </script>
-</body>
-
+  </body>
 </html>

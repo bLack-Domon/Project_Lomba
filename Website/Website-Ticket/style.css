@@ -22,29 +22,43 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.navbar-horizontal img {
-  height: 80px;
-  margin-right: 15px;
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
-.navbar-horizontal h1 {
-  font-size: 24px;
-  font-weight: 600;
+.logo {
+  height: 60px;
 }
 
-.navbar-horizontal ul {
-  list-style: none; /* Hilangkan bullet */
-  display: flex; /* Biar inline */
-    gap: 20px; /* Jarak antar item */
-    margin: 0;
-    padding: 0;
+.navbar-left h1 {
+  font-size: 40px;
+  font-weight: normal;
 }
 
-.navbar-horizontal ul li a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
+.navbar-center {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
 }
+
+.navbar-center li a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.navbar-right .profile-pic {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
 /* Main Content */
 /* .main-content {
             display: flex;
