@@ -10,7 +10,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url('background.jpg') no-repeat center center fixed;
+    background: url('img/background.jpeg') no-repeat center center fixed;
     background-size: cover;
     position: relative;
 }
@@ -22,7 +22,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
+    /* background-color: rgba(0, 0, 0, 0.6); */
     z-index: 0;
 }
 
@@ -263,4 +263,9 @@ body::before {
     .social-login p::after {
         width: 25%;
     }
+}
+
+#output {
+    color: red;
+    font-size: 13px;
 }

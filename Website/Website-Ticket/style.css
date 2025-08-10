@@ -15,6 +15,7 @@ body {
 .navbar-horizontal {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 15px 30px;
   background-color: #ffffff;
   color: #000000;
@@ -31,6 +32,19 @@ body {
   font-weight: 600;
 }
 
+.navbar-horizontal ul {
+  list-style: none; /* Hilangkan bullet */
+  display: flex; /* Biar inline */
+    gap: 20px; /* Jarak antar item */
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-horizontal ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
 /* Main Content */
 /* .main-content {
             display: flex;
@@ -188,4 +202,13 @@ body {
     white-space: nowrap;
     padding: 10px 15px;
   }
+}
+
+li {
+  display: inline;
+}
+
+.simbol {
+  display: inline-flex;
+  justify-content: center;
 }
