@@ -1,139 +1,80 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Sample event data
-    const events = [
-        {
-            id: 1,
-            title: "Malam Puisi Kontemporer",
-            category: "puisi",
-            date: "15 Oktober 2023",
-            price: "Rp 75.000",
-            image: ""
-        },
-        {
-            id: 2,
-            title: "Drama Musikal 'Rindu'",
-            category: "drama",
-            date: "20 Oktober 2023",
-            price: "Rp 120.000",
-            image: "event2.jpg"
-        },
-        {
-            id: 3,
-            title: "Konser Jazz Malam",
-            category: "music",
-            date: "25 Oktober 2023",
-            price: "Rp 150.000",
-            image: "event3.jpg"
-        },
-        {
-            id: 4,
-            title: "Wayang Kulit Semalam",
-            category: "wayang",
-            date: "28 Oktober 2023",
-            price: "Rp 100.000",
-            image: "event4.jpg"
-        },
-        {
-            id: 5,
-            title: "Baca Puisi & Diskusi",
-            category: "puisi",
-            date: "5 November 2023",
-            price: "Rp 50.000",
-            image: "event5.jpg"
-        },
-        {
-            id: 6,
-            title: "Teater Modern 'Hening'",
-            category: "drama",
-            date: "12 November 2023",
-            price: "Rp 90.000",
-            image: "event6.jpg"
-        },
-        {
-            id: 7,
-            title: "Orkestra Klasik",
-            category: "music",
-            date: "18 November 2023",
-            price: "Rp 200.000",
-            image: "event7.jpg"
-        },
-        {
-            id: 8,
-            title: "Wayang Orang",
-            category: "wayang",
-            date: "25 November 2023",
-            price: "Rp 80.000",
-            image: "event8.jpg"
+// Booking Modal Functions
+        function openModal(eventTitle) {
+            document.getElementById('modalEventTitle').textContent = eventTitle;
+            document.getElementById('bookingModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            resetForm();
         }
-    ];
 
-    const eventsContainer = document.getElementById('events-container');
-    const navItems = document.querySelectorAll('.nav-item:not(.contact-item)');
-
-    // Function to render events
-    function renderEvents(category = 'all') {
-        eventsContainer.innerHTML = '';
-        
-        const filteredEvents = category === 'all' 
-            ? events 
-            : events.filter(event => event.category === category);
-        
-        if (filteredEvents.length === 0) {
-            eventsContainer.innerHTML = '<p class="no-events">Tidak ada pertunjukan dalam kategori ini.</p>';
-            return;
+        function closeModal() {
+            document.getElementById('bookingModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
         }
-        
-        filteredEvents.forEach(event => {
-            const eventCard = document.createElement('div');
-            eventCard.className = 'event-card';
-            eventCard.innerHTML = `
-                <div class="event-image">
-                    <img src="images/${event.image}" alt="${event.title}">
-                </div>
-                <div class="event-details">
-                    <span class="event-category">${event.category}</span>
-                    <h3 class="event-title">${event.title}</h3>
-                    <div class="event-date">
-                        <i class="far fa-calendar-alt"></i>
-                        <span>${event.date}</span>
-                    </div>
-                    <div class="event-price">
-                        <span class="price">${event.price}</span>
-                        <button class="book-btn">Pesan Tiket</button>
-                    </div>
-                </div>
-            `;
-            eventsContainer.appendChild(eventCard);
-        });
-    }
 
-    // Initial render
-    renderEvents();
+        function resetForm() {
+            document.getElementById('bookingForm').reset();
+            document.getElementById('generalQuantity').value = 0;
+            document.getElementById('premiumQuantity').value = 0;
+            document.getElementById('vipQuantity').value = 0;
+            document.getElementById('totalAmount').textContent = '0.00';
+        }
 
-    // Event filtering
-    navItems.forEach(item => {
-        item.addEventListener('click', function() {
-            // Update active state
-            navItems.forEach(nav => nav.classList.remove('active'));
-            this.classList.add('active');
+        // Quantity Adjustment
+        function adjustQuantity(ticketType, change) {
+            const quantityElement = document.getElementById(ticketType + 'Quantity');
+            let quantity = parseInt(quantityElement.value);
+            quantity += change;
             
-            // Filter events
-            const category = this.getAttribute('data-category');
-            renderEvents(category);
-        });
-    });
-
-    // Contact item click handler
-    document.querySelector('.contact-item').addEventListener('click', function() {
-        alert('Silahkan hubungi kami di: info@aksesstudio.com');
-    });
-
-    // Book button functionality (would be enhanced in a real app)
-    document.addEventListener('click', function(e) {
-        if (e.target.classList.contains('book-btn')) {
-            const eventCard = e.target.closest('.event-card');
-            const eventTitle = eventCard.querySelector('.event-title').textContent;
-            alert(`Anda akan memesan tiket untuk: ${eventTitle}`);
+            if (quantity < 0) quantity = 0;
+            
+            quantityElement.value = quantity;
+            calculateTotal();
         }
-    });
-});
+
+        // Calculate Total Price
+        function calculateTotal() {
+            const generalQty = parseInt(document.getElementById('generalQuantity').value);
+            const premiumQty = parseInt(document.getElementById('premiumQuantity').value);
+            const vipQty = parseInt(document.getElementById('vipQuantity').value);
+            
+            const generalPrice = 49.99;
+            const premiumPrice = 129.99;
+            const vipPrice = 299.99;
+            
+            const total = (generalQty * generalPrice) + (premiumQty * premiumPrice) + (vipQty * vipPrice);
+            
+            document.getElementById('totalAmount').textContent = total.toFixed(2);
+        }
+
+        // Confirm Booking
+        function confirmBooking() {
+            const total = parseFloat(document.getElementById('totalAmount').textContent);
+            
+            if (total <= 0) {
+                alert('Please select at least one ticket.');
+                return;
+            }
+            
+            // In a real application, you would send the form data to a server here
+            // For this demo, we'll just show the confirmation modal
+            
+            closeModal();
+            document.getElementById('confirmationModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close Confirmation Modal
+        function closeConfirmation() {
+            document.getElementById('confirmationModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modals when clicking outside
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('bookingModal')) {
+                closeModal();
+            }
+            if (event.target == document.getElementById('confirmationModal')) {
+                closeConfirmation();
+            }
+        }
